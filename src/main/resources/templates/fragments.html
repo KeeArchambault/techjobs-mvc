@@ -27,5 +27,34 @@
         </div>
     </div>
 
+    <div th:fragment="results">
+    <span th:each="result : ${results}">
+                <table class="job-listing" name="searchResults">
+                    <tr>
+                        <td>Position Type </td>
+                        <td th:text="${result.get('position type')}"> </td>
+                    </tr>
+                    <tr>
+                        <td>Title</td>
+                        <td th:text="${result.get('name')}"></td>
+                    </tr>
+                    <tr>
+                        <td>Employer</td>
+                        <td th:text="${result.get('employer')}"></td>
+                    </tr>
+                    <tr>
+                        <td>Location</td>
+                        <td th:text="${result.get('location')}"></td>
+                    </tr>
+                    <tr>
+                        <td>Core Competency</td>
+                        <td th:text="${result.get('core competency')}"></td>
+                    </tr>
+                </table>
+
+            </span>
+
+    </div>
+
 </body>
 </html>
