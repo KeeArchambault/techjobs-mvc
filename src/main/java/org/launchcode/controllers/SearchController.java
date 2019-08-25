@@ -25,6 +25,12 @@ public class SearchController {
 
     @RequestMapping(value= "/results")
     public String results(Model model, @RequestParam String searchType, @RequestParam String searchTerm) {
+
+//        if (jobs.isEmpty()){
+//            return "no results";
+//        } else {
+//        TODO implement "No Results" message
+//        ArrayList<HashMap<String, String>> jobs = JobData.findByValue(searchTerm));
         if (searchType.equals("all")){
             model.addAttribute("results", JobData.findByValue(searchTerm));
         }else
